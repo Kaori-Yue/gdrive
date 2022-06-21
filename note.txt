@@ -1,0 +1,16 @@
+
+go get github.com/prasmussen/gdrive
+echo "module gdrive" >> go.mod
+go mod tidy
+go build -mod=readonly -ldflags '-w -s'
+
+for windows 64bit
+GOOS=windows GOARCH=amd64 go build -mod=readonly -ldflags '-w -s' -o gdrive.exe
+
+https://gist.github.com/ttt-t-ttt/db7e46f6b4619797f0def9db9457a064
+
+example client.json
+{
+        "client_id": "",
+        "client_secret": ""
+}
